@@ -1,0 +1,3 @@
+name: DefaultSpawner
+version: 1.0
+main: com.eightonegulf.mc.defaultspawner.Plugin
