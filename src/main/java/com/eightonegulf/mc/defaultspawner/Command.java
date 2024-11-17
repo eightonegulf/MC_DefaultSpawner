@@ -63,9 +63,9 @@ public class Command implements CommandExecutor, TabCompleter {
 
     private String LocationToString(Location location){
         return location.getWorld().getName() + " " +
-                (int)location.getX() + " " +
-                (int)location.getY() + " " +
-                (int)location.getZ();
+                location.getX() + " " +
+                location.getY() + " " +
+                location.getZ();
     }
 
     private boolean onCommandSetCoordinate(CommandSender commandSender, String[] args){

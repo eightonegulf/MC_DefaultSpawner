@@ -46,9 +46,9 @@ class Config {
             return;
 
         SetWorld(world.getName());
-        SetX(location.getBlockX());
-        SetY(location.getBlockY());
-        SetZ(location.getBlockZ());
+        SetX(location.getX());
+        SetY(location.getY());
+        SetZ(location.getZ());
 
         _plugin.saveConfig();
     }
