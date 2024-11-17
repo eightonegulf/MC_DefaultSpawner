@@ -76,16 +76,16 @@ public class Command implements CommandExecutor, TabCompleter {
 
         String worldName = args[2];
         try{
-            int x = Integer.parseInt(args[3]);
-            int y = Integer.parseInt(args[4]);
-            int z = Integer.parseInt(args[5]);
+            double x = Double.parseDouble(args[3]);
+            double y = Double.parseDouble(args[4]);
+            double z = Double.parseDouble(args[5]);
 
             if(server.getWorlds().stream().noneMatch(t -> t.getName().equals(worldName))){
                 commandSender.sendMessage("Unknown world " + worldName);
                 return false;
             }
 
-            Location newLocation = server.getWorld(worldName).getBlockAt(x,y,z).getLocation();
+            Location newLocation = new Location(server.getWorld(worldName), x,y,z);
             setCoordinate(commandSender, newLocation);
             return true;
 

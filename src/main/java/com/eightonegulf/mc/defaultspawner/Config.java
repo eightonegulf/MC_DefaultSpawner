@@ -19,24 +19,24 @@ class Config {
         _plugin.getConfig().set("world", worldName);
     }
 
-    private int GetX(){
+    private double GetX(){
         return _plugin.getConfig().getInt("x");
     }
-    private void SetX(int x){
+    private void SetX(double x){
         _plugin.getConfig().set("x", x);
     }
 
-    private int GetY(){
-        return _plugin.getConfig().getInt("y");
+    private double GetY(){
+        return _plugin.getConfig().getDouble("y");
     }
-    private void SetY(int y){
+    private void SetY(double y){
         _plugin.getConfig().set("y", y);
     }
 
-    private int GetZ(){
-        return _plugin.getConfig().getInt("z");
+    private double GetZ(){
+        return _plugin.getConfig().getDouble("z");
     }
-    private void SetZ(int z){
+    private void SetZ(double z){
         _plugin.getConfig().set("z", z);
     }
 
@@ -66,9 +66,10 @@ class Config {
             return null;
         }
 
-        int coordinateX = GetX();
-        int coordinateY = GetY();
-        int coordinateZ = GetZ();
-        return world.getBlockAt(coordinateX, coordinateY, coordinateZ).getLocation();
+        double coordinateX = GetX();
+        double coordinateY = GetY();
+        double coordinateZ = GetZ();
+
+        return new Location(world, coordinateX, coordinateY, coordinateZ);
     }
 }
