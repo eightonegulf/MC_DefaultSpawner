@@ -12,7 +12,9 @@ public class Plugin extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         _config = new Config(this);
+
         getServer().getPluginManager().registerEvents(this, this);
+        getCommand("defaultspawner").setExecutor(new Command(this, _config));
     }
     @Override
     public void onDisable() {
