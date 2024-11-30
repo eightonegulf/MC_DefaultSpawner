@@ -20,7 +20,7 @@ class Config {
     }
 
     private double GetX(){
-        return _plugin.getConfig().getInt("x");
+        return _plugin.getConfig().getDouble("x");
     }
     private void SetX(double x){
         _plugin.getConfig().set("x", x);
